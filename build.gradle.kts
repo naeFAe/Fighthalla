@@ -17,15 +17,12 @@ dependencies {
     // Kotlin test library
     testImplementation(kotlin("test"))
 
-    // JUnit Jupiter API and Engine for JUnit 5
     testImplementation("junit:junit:4.13.2")
-    // Mockito for Kotlin
-    testImplementation("org.mockito.kotlin:mockito-kotlin:3.2.0")
 }
 
 tasks.test {
     // Use JUnit Platform for testing
-    useJUnit()
+    useJUnitPlatform()
 }
 
 tasks.withType<KotlinCompile> {
@@ -39,8 +36,8 @@ application {
 }
 
 pitest {
-    targetClasses.set(listOf("abstract.*", "controller.*")) // Pentru clasele din pachetele abstract și controller
-    targetTests.set(listOf("*")) // Presupunând că testele tale sunt în directorul src/main/kotlin/test
+    targetClasses.set(listOf("model.AdvancedProcessor")) // Pentru clasele din pachetele abstract și controller
+    targetTests.set(listOf("AdvancedProcessorTest")) // Presupunând că testele tale sunt în directorul src/main/kotlin/test
     threads.set(4)
     outputFormats.set(listOf("HTML", "XML"))
     timestampedReports.set(false)

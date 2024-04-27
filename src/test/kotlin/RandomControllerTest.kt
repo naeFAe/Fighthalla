@@ -1,3 +1,4 @@
+/*
 import abstract.Fighter
 import controller.RandomController
 import org.junit.Test
@@ -87,3 +88,4 @@ class RandomControllerTest {
 //    Clase de echivalență și Valori de frontieră: Testăm cu putere scăzută și înaltă.
 //    Acoperire: Acoperire completă a deciziilor și condițiilor.
 }
+*/

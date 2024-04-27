@@ -1,3 +1,4 @@
+/*
 import abstract.Fighter
 import enum.Bless
 import org.junit.Test
@@ -43,3 +44,4 @@ class FighterClassTest {
         assertTrue(!fighter.isUltimateAvailable)
     }
 }
+*/

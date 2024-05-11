@@ -1,8 +1,8 @@
-import junit.framework.TestCase.*
 import model.AdvancedProcessor
-import org.junit.Assert.assertThrows
-import org.junit.Test
+import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
+
 
 class AdvancedProcessorTest {
     private val processor = AdvancedProcessor()

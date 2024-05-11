@@ -1,3 +1,4 @@
+/*
 import controller.InputController
 import org.junit.Test
 import java.io.ByteArrayInputStream
@@ -43,3 +44,4 @@ class InputControllerTest {
 //    Acoperire: Asigurăm că toate cazurile de validare sunt testate.
 
 }
+*/

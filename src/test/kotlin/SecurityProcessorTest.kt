@@ -35,23 +35,8 @@ class SecurityProcessorTest {
         every { inputReader.readLine() } returns "KotlinSecure123!"
         securityProcessor.checkPassword()
         val output = outputStreamCaptor.toString()
-        assertTrue(output.contains("Password correct!"), "Expected output to confirm correct password")
-    }
-
-    @Test
-    fun testPasswordWithSpecialCharacters() {
-        every { inputReader.readLine() } returns "Abcde#123"
-        securityProcessor.checkPassword()
-        val output = outputStreamCaptor.toString()
-        assertTrue(output.contains("Incorrect password. Please try again."), "Expected output for incorrect password with valid format")
-    }
-
-    @Test
-    fun testPasswordWithNoSpecialCharacter() {
-        every { inputReader.readLine() } returns "Abcde1234"
-        securityProcessor.checkPassword()
-        val output = outputStreamCaptor.toString()
-        assertTrue(output.contains("Password must contain at least one number, one uppercase letter, and one special character."), "Expected specific validation error for missing special character")
+        assertTrue(output.contains("Password correct!"), "Expected output" +
+                " to confirm correct password")
     }
 
     @Test
@@ -59,7 +44,27 @@ class SecurityProcessorTest {
         every { inputReader.readLine() } returns "short"
         securityProcessor.checkPassword()
         val output = outputStreamCaptor.toString()
-        assertTrue(output.contains("Password must be at least 8 characters long"), "Expected output to indicate password length error")
+        assertTrue(output.contains("Password must be at least 8 characters long"),
+            "Expected output to indicate password length error")
+    }
+
+    @Test
+    fun testPasswordWithSpecialCharacters() {
+        every { inputReader.readLine() } returns "Abcde#123"
+        securityProcessor.checkPassword()
+        val output = outputStreamCaptor.toString()
+        assertTrue(output.contains("Incorrect password. Please try again."),
+            "Expected output for incorrect password with valid format")
+    }
+
+    @Test
+    fun testPasswordWithNoSpecialCharacter() {
+        every { inputReader.readLine() } returns "Abcde1234"
+        securityProcessor.checkPassword()
+        val output = outputStreamCaptor.toString()
+        assertTrue(output.contains("Password must contain at least one number, " +
+                "one uppercase letter, and one special character."),
+            "Expected specific validation error for missing special character")
     }
 
     @Test

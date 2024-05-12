@@ -8,6 +8,8 @@ import org.junit.Before
 import org.junit.After
 import org.junit.Test
 import kotlin.test.assertTrue
+import kotlin.test.assertFalse
+import kotlin.test.assertFailsWith
 
 class SecurityProcessorTest {
 
@@ -75,6 +77,50 @@ class SecurityProcessorTest {
         val output = outputStreamCaptor.toString()
         assertTrue(output.contains("Password correct!"), "Expected output to confirm correct password on last attempt")
     }
+
+    @Test
+    fun testExceededAttemptBoundary() {
+        // Assume attemptCount might be modified unexpectedly
+        every { inputReader.readLine() } returns "wrongPassword"
+        repeat(4) { securityProcessor.checkPassword() } // Exceeding attempts more than maxAttempts to trigger boundary condition
+        val output = outputStreamCaptor.toString()
+        assertTrue(output.contains("Maximum attempt limit reached. Access denied."), "Expected output when max attempts are exceeded initially")
+    }
+
+    @Test
+    fun testValidatePasswordBoundary() {
+        every { inputReader.readLine() } returns "A1#aaaaa" // exactly 8 characters, valid case
+        securityProcessor.checkPassword()
+        val output = outputStreamCaptor.toString()
+        assertTrue(output.contains("Incorrect password. Please try again."), "Expected output for boundary password length")
+    }
+
+    @Test
+    fun testFalseReturnMutations() {
+        every { inputReader.readLine() } returns "Short1#"
+        securityProcessor.checkPassword()
+        val output = outputStreamCaptor.toString()
+        assertTrue(output.contains("Password must be at least 8 characters long"), "Expected validation failure on mutated true to false return")
+    }
+
+    @Test
+    fun testIsMaxAttemptReachedWithInvalidInput() {
+        assertFailsWith<IllegalArgumentException> {
+            securityProcessor.isMaxAttemptReached(-1, 3)
+        }
+        assertFailsWith<IllegalArgumentException> {
+            securityProcessor.isMaxAttemptReached(1, 0)
+        }
+    }
+
+    @Test
+    fun testIsMaxAttemptReached() {
+        assertFalse(securityProcessor.isMaxAttemptReached(1, 3))
+        assertTrue(securityProcessor.isMaxAttemptReached(3, 3))
+        assertTrue(securityProcessor.isMaxAttemptReached(4, 3))
+    }
+
+
 }
 
 

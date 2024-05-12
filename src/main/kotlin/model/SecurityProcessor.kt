@@ -23,9 +23,9 @@ class SecurityProcessor(private val inputReader: InputReader) {
             if (attemptCount < maxAttempts) {
                 println("${maxAttempts - attemptCount} attempts left.")
             }
-        } while (attempt != correctPassword && attemptCount < maxAttempts)
+        } while (!isMaxAttemptReached(attemptCount, maxAttempts) && attempt != correctPassword)
 
-        if (attemptCount == maxAttempts) {
+        if (isMaxAttemptReached(attemptCount, maxAttempts)) {
             println("Maximum attempt limit reached. Access denied.")
         }
     }
@@ -51,4 +51,16 @@ class SecurityProcessor(private val inputReader: InputReader) {
         }
         return true
     }
+
+    fun isMaxAttemptReached(attemptCount: Int, maxAttempts: Int): Boolean {
+       // Verifică dacă inputurile sunt valide
+       if (attemptCount < 0 || maxAttempts <= 0) {
+           throw IllegalArgumentException("Attempt count and max attempts must be non-negative and max attempts must be greater than zero.")
+       }
+
+       // Verifică dacă numărul de încercări a depășit limita maximă
+       return attemptCount >= maxAttempts
+   }
+
 }
+

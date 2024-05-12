@@ -1,28 +1,3 @@
-Simple Arena simulator built while learnig Kotlin and Intellij.
-
-Test goal:
-
-1.Partiționare în clase de echivalență:
-
-Ce înseamnă: Partiționarea în clase de echivalență implică împărțirea datelor de intrare ale unei funcții în grupuri (sau clase) care sunt tratate în mod similar de către sistem. Testarea unei valori dintr-o clasă ar trebui să fie suficientă pentru a testa întreaga clasă.
-Exemplu: Pentru o funcție care acceptă un număr întreg care reprezintă vârsta unei persoane și returnează un mesaj relevant (de exemplu, "minor" pentru vârste sub 18 și "adult" pentru vârste de 18 sau mai mult), clasele de echivalență ar putea fi: {vârste < 18}, {vârste ≥ 18}.
-
-2.Analiza valorilor de frontieră:
-
-Ce înseamnă: Această tehnică se concentrează pe valorile la limita claselor de echivalență, unde erorile sunt mai probabile să apară.
-Exemplu: Continuând exemplul de mai sus, valorile de frontieră ar fi 17 și 18 pentru clasele {vârste < 18}, {vârste ≥ 18}.
-
-3.Acoperire la nivel de instrucțiune:
-
-Ce înseamnă: Testarea acoperirii la nivel de instrucțiune implică asigurarea că fiecare linie de cod din unitatea testată este executată cel puțin o dată prin teste.
-Exemplu: Asigurarea că fiecare declarație în codul funcției de vârstă este executată în teste.
-
-4.Acoperire la nivel de decizie:
-
-Ce înseamnă: Focalizarea pe testarea deciziilor în cadrul codului, cum ar fi instrucțiuni condiționale (if, else).
-Exemplu: Testarea ambelor ramuri ale condiției de vârstă (atât cazul < 18, cât și ≥ 18).
-
-5.Acoperire la nivel de condiție:
-
-Ce înseamnă: Se asigură că fiecare condiție din deciziile compuse este evaluată atât la true, cât și la false.
-Exemplu: Dacă funcția de vârstă are o condiție compusă cum ar fi age >= 18 && age < 65, trebuie testate condițiile unde age >= 18 este adevărat și fals, și unde age < 65 este adevărat și fals.
+Documentatia se afla la nivel de proiect in folderul de Documentatie.
+Prezentarea ppt se regaseste tot in folderul Documentatie.
+Demo link: https://unibucro0-my.sharepoint.com/:v:/g/personal/marius_nastase_s_unibuc_ro/ES6CMF7xTVVGgE4Q4FqNt0IBvTxzoVSDamw3TgABrwzJBQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=rtAa1j

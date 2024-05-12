@@ -1,3 +1,4 @@
+/*
 package model
 
 import abstract.Fighter
@@ -42,4 +43,4 @@ data class Archer(
     override fun toString(): String {
         return ""
     }
-}
+}*/

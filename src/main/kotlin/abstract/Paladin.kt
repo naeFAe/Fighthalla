@@ -1,3 +1,4 @@
+/*
 package abstract
 
 interface Paladin {
@@ -6,4 +7,4 @@ interface Paladin {
     val armorMultiplier: Double
 
     fun paladinSkill ()
-}
+}*/

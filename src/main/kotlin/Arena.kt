@@ -1,3 +1,4 @@
+/*
 import abstract.Fighter
 import controller.InputController
 import controller.RandomController
@@ -94,4 +95,4 @@ class Arena {
     }
 
     //endregion
-}
+}*/

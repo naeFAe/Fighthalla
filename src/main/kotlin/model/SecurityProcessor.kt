@@ -1,6 +1,6 @@
 package model
 
-class SecurityProcessor {
+class SecurityProcessor(private val inputReader: InputReader) {
     fun checkPassword() {
         val correctPassword = "KotlinSecure123!"
         var attempt: String
@@ -10,7 +10,7 @@ class SecurityProcessor {
         println("Please enter your password (you have $maxAttempts attempts, password must include a number, an uppercase letter, and a special character):")
 
         do {
-            attempt = readLine() ?: ""
+            attempt = inputReader.readLine() ?: ""
             if (validatePassword(attempt)) {
                 if (attempt == correctPassword) {
                     println("Password correct!")

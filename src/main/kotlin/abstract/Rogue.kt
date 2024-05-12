@@ -1,3 +1,4 @@
+/*
 package abstract
 
 interface Rogue {
@@ -6,4 +7,4 @@ interface Rogue {
     val agilityMultiplier: Double
 
     fun rogueSkill ()
-}
+}*/

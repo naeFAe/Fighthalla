@@ -1,3 +1,4 @@
+/*
 package controller
 
 object InputController {
@@ -46,4 +47,4 @@ object InputController {
     }
 
     //endregion
-}
+}*/

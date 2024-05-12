@@ -1,3 +1,4 @@
+/*
 package model
 
 class AdvancedProcessor {
@@ -32,4 +33,4 @@ class AdvancedProcessor {
         }
         return price * discount
     }
-}
+}*/

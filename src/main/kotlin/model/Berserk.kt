@@ -1,3 +1,4 @@
+/*
 package model
 
 import abstract.Fighter
@@ -38,4 +39,4 @@ data class Berserk(
     override fun warriorSkill() {
         TODO("Not yet implemented")
     }
-}
+}*/

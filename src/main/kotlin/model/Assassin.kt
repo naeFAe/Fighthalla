@@ -1,3 +1,4 @@
+/*
 package model
 
 import abstract.Fighter
@@ -44,4 +45,4 @@ data class Assassin(
     override fun rogueSkill() {
         TODO("Not yet implemented")
     }
-}
+}*/

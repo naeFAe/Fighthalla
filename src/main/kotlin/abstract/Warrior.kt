@@ -1,3 +1,4 @@
+/*
 package abstract
 
 interface Warrior {
@@ -6,4 +7,4 @@ interface Warrior {
     val strengthMultiplier: Double
 
     fun warriorSkill ()
-}
+}*/

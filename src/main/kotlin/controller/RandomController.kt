@@ -1,3 +1,4 @@
+/*
 package controller
 
 import abstract.Fighter
@@ -42,4 +43,4 @@ object RandomController {
             potion = Potion.values().random()
         return potion
     }
-}
+}*/

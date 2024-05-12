@@ -1,3 +1,4 @@
+/*
 package model
 
 import abstract.Fighter
@@ -39,3 +40,4 @@ data class Sentinel(
         TODO("Not yet implemented")
     }
 }
+*/

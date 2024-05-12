@@ -1,3 +1,4 @@
+/*
 package model
 
 import abstract.Fighter
@@ -45,4 +46,4 @@ data class Priest(
     override fun paladinSkill() {
         TODO("Not yet implemented")
     }
-}
+}*/

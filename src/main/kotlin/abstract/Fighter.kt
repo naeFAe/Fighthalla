@@ -1,3 +1,4 @@
+/*
 package abstract
 
 import controller.InputController
@@ -189,4 +190,4 @@ abstract class Fighter(
     }
 
     //endregion
-}
+}*/
